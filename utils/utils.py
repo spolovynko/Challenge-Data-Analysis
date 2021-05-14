@@ -20,24 +20,24 @@ def replace_string_by_value(column, numbers, replaces, database="data"):
 
 def change_to_province(postal_code):
     if postal_code >= 1000 and postal_code < 1300:
-        return "Brussel","Brussel"
+        return "Brussel","Brussel",1,1
     elif postal_code >= 1300 and postal_code < 1500:
-        return "Brabant Wallon","Wallonia"
+        return "Brabant Wallon","Wallonia",2,2
     elif (postal_code >= 1500 and postal_code < 2000) or (postal_code >= 3000 and postal_code < 3500):
-        return "Brabant Flamand","Flanders"
+        return "Brabant Flamand","Flanders",3,3
     elif postal_code >= 2000 and postal_code < 3000:
-        return "Anvers","Flanders"
+        return "Anvers","Flanders",4,3
     elif postal_code >= 3500 and postal_code < 4000:
-        return "Limbourg","Flanders"
+        return "Limbourg","Flanders",5,3
     elif postal_code >= 4000 and postal_code < 5000:
-        return "Liège","Wallonia"
+        return "Liège","Wallonia",6,2
     elif postal_code >= 5000 and postal_code < 6000:
-        return "Namur","Wallonia"
+        return "Namur","Wallonia",7,2
     elif (postal_code >= 6000 and postal_code < 6600) or (postal_code >= 7000 and postal_code < 8000):
-        return "Hainaut","Wallonia"
+        return "Hainaut","Wallonia",8,2
     elif postal_code >= 6600 and postal_code < 7000:
-        return "Luxembourg","Wallonia"
+        return "Luxembourg","Wallonia",9,2
     elif postal_code >= 8000 and postal_code < 9000:
-        return "Flandre Occidental","Flanders"
+        return "Flandre Occidental","Flanders",10,3
     elif postal_code >= 9000:
-        return "Flandre Oriental","Flanders"
+        return "Flandre Oriental","Flanders",11,3
