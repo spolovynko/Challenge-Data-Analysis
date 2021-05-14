@@ -1,5 +1,6 @@
 import pandas as pd
 from utils.utils import *
+import numpy as np
 data = pd.read_csv('databasetest.csv', sep=',')
 
 """Delete rows without prices"""
@@ -8,7 +9,8 @@ drop_row_without_value("Price",data)
 del data['Surface area of the plot of land']
 del data['Unnamed: 0']
 del data['Url']
-
+data.drop(data.index[np.where(data.Price > 10000000)[0]])
+data.drop(data.index[np.where(data.Price < 50000)[0]])
 data['Surface of the land'] = data['Area'] + data['Terrace Area'] + data['Garden Area']
 
 
@@ -19,7 +21,8 @@ data["Region"] = data.apply(lambda x: change_to_province(x["Locality"])[1], axis
 
 data_final = data.reset_index()
 
-data_final.to_csv("DataFinal2.csv")
+print(data.info())
+data_final.to_csv("DataFinal3.csv")
 
 
 
